@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ahmad Autos</title>
+
+<style>
+/* BODY */
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial;
+    direction: rtl;
+    background: #f4f7fb;
+    scroll-behavior: smooth;
+}
+
+/* HEADER ANIMATION */
+header {
+    background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #f9c74f);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+header h1 {
+    margin: 0;
+    font-size: 40px;
+    color: #fff;
+}
+
+/* NAVBAR */
+nav {
+    position: sticky;
+    top: 0;
+    background: white;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+nav button {
+    background: #2c5364;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+nav button:hover {
+    background: #f9c74f;
+    color: black;
+    transform: scale(1.05);
+}
+
+/* SECTIONS */
+.container {
+    padding: 20px;
+}
+
+.section {
+    display: none;
+    background: white;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+
+    /* ANIMATION */
+    animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* CARDS */
+.card {
+    background: #f9f9f9;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+/* CONTACT */
+footer {
+    background: #203a43;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+/* MAP */
+iframe {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>احمد آٹوز</h1>
+    <p>موٹر سائیکل سپیئر پارٹس اور لیمینیشن سینٹر</p>
+</header>
+
+<!-- NAV -->
+<nav>
+    <button onclick="showSection('home')">Home</button>
+    <button onclick="showSection('lamination')">Lamination</button>
+    <button onclick="showSection('parts')">Spare Parts</button>
+    <button onclick="showSection('address')">Address</button>
+    <button onclick="showSection('contact')">Contact</button>
+</nav>
+
+<div class="container">
+
+    <!-- HOME -->
+    <div id="home" class="section" style="display:block;">
+        <h2>🏪 خوش آمدید</h2>
+        <p>یہ احمد آٹوز کی آفیشل ویب سائٹ ہے جہاں بہترین موٹر سائیکل سروسز دستیاب ہیں۔</p>
+    </div>
+
+    <!-- LAMINATION -->
+    <div id="lamination" class="section">
+        <h2>🛠️ زاہد - لیمینیشن</h2>
+        <div class="card">
+            بہترین موٹر سائیکل اسٹیکرز، ڈیزائن اور پروفیشنل لیمینیشن سروس۔
+        </div>
+    </div>
+
+    <!-- PARTS -->
+    <div id="parts" class="section">
+        <h2>🔧 عامر عقیل - سپیئر پارٹس</h2>
+        <div class="card">
+            موٹر سائیکل کے تمام اعلیٰ کوالٹی سپیئر پارٹس دستیاب ہیں۔
+        </div>
+    </div>
+
+    <!-- ADDRESS -->
+    <div id="address" class="section">
+        <h2>📍 ایڈریس</h2>
+        <p>مین مٹھالی روڈ، نیئر آرامکو پمپ، ساہیوال</p>
+
+        <!-- GOOGLE MAP -->
+        <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3437.0!2d73.1060!3d30.6700!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sSahiwal!5e0!3m2!1sen!2s!4v1700000000000">
+        </iframe>
+    </div>
+
+    <!-- CONTACT -->
+    <div id="contact" class="section">
+        <h2>📞 رابطہ</h2>
+        <div class="card">
+            <p><b>زاہد:</b> 0321-4937359</p>
+            <p><b>عامر عقیل:</b> 0304-52825005</p>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 احمد آٹوز - تمام حقوق محفوظ ہیں
+</footer>
+
+<script>
+function showSection(id) {
+    let sections = document.querySelectorAll('.section');
+    sections.forEach(sec => sec.style.display = 'none');
+
+    document.getElementById(id).style.display = 'block';
+}
+</script>
+
+</body>
+</html>
